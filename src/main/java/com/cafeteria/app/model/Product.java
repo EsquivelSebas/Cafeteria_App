@@ -15,7 +15,7 @@ public class Product {
     private String imageUrl;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @JoinColumn(name = "category_id", nullable = true)
     @JsonBackReference 
     private Category category;
 

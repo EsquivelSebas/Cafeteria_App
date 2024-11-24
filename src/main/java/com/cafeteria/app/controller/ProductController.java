@@ -1,5 +1,6 @@
 package com.cafeteria.app.controller;
 
+import com.cafeteria.app.dto.ProductDTO;
 import com.cafeteria.app.model.Category;
 import com.cafeteria.app.model.Product;
 import com.cafeteria.app.model.Subcategory;
@@ -17,6 +18,7 @@ public class ProductController {
 
     private final CategoryService categoryService;
     private final ProductService productService;
+   
 
     @Autowired
     public ProductController(CategoryService categoryService, ProductService productService) {
@@ -56,6 +58,14 @@ public class ProductController {
     {
         productService.delete(products);
         return "redirect:/products";
+    }
+    
+    @PostMapping("/Guardar")
+    public String Guardar(ProductDTO product)
+    {
+        productService.save(product);
+        return "redirect:/products";
+                 
     }
     
     
