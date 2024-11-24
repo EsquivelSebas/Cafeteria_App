@@ -48,6 +48,18 @@ public class ProductController {
             return "products/subcategories";
         }
     }
+    
+    
+    
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(Product products)
+    {
+        productService.delete(products);
+        return "redirect:/products";
+    }
+    
+    
+    
 
     @GetMapping("/subcategory/{id}")
     public String showSubcategory(@PathVariable Long id, Model model) {
