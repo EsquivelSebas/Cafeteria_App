@@ -1,5 +1,6 @@
 package com.cafeteria.app.service;
 
+import com.cafeteria.app.dto.CategoryDTO;
 import com.cafeteria.app.model.Category;
 import com.cafeteria.app.model.Subcategory;
 import com.cafeteria.app.repository.CategoryRepository;
@@ -34,5 +35,18 @@ public class CategoryService {
     public Subcategory getSubcategoryById(Long id) {
         return subcategoryRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Subcategory not found with ID: " + id));
+    }
+
+    public void delete(Category category) {
+    categoryRepository.delete(category);
+    }
+    
+    public void save(CategoryDTO categoryDTO)
+    {
+        Category category = new Category();
+        category.setId(categoryDTO.getId());
+        category.setName(categoryDTO.getName());
+        
+        categoryRepository.save(category);
     }
 }

@@ -11,7 +11,9 @@
     <main class="catalog-container">
         <h1 class="catalog-title">Nuestros Productos</h1>
         <div th:replace="~{fragments/layout :: botonesAgregarProducto}"></div>
+        <div th:replace="~{fragments/layout :: botonesAgregarCategoria}"></div>
         <div th:replace="~{fragments/layout :: agregarProducto}"></div>
+         <div th:replace="~{fragments/layout :: agregarcategoria}"></div>
         <div class="categories-grid">
             <a th:each="category : ${categories}" 
                th:href="@{'/products/category/' + ${category.id}}" 

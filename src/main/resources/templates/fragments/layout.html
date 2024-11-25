@@ -108,7 +108,7 @@
                     <div class="modal-content">
                         <div class="modal-header bg-info text-white">
                             <h5 class="modal-title">Productos</h5>
-                            <button type="button" class="btn btn-submit" data-bs-dismiss="modal" aria-label="Close"></button>
+                            
                         </div> 
                         <form th:action="@{/products/Guardar}" th:object="${product}" 
                                method="POST" class="was-validated" enctype="multipart/form-data">
@@ -141,6 +141,59 @@
                                 </div>
                                
                             </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-submit" type="submit">Guardar</button>
+                                <button class="btn btn-close" type="button" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+          ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ADD CATEGORIES BUTTONS
+  
+         <section th:fragment="botonesAgregarCategoria" class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">   
+                        <button 
+                            type="button" 
+                            class="btn btn-agregar" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#AgregarCategoria">
+                            <i class="fas fa-plus"></i> Agregar Categoria
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section th:fragment="agregarcategoria">
+            <div id="AgregarCategoria" 
+                 class="modal fade" 
+                 tabindex="-1" 
+                 aria-labelledby="exampleModalLabel" 
+                 aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title">Añadir Categorias</h5>
+                            
+                        </div> 
+                        <form th:action="@{/products/guardar}" th:object="${category}" 
+                               method="POST" class="was-validated" enctype="multipart/form-data">
+                            <div class="modal-body">
+                               
+                                <div class="mb-3">
+                                    <label for="id">ID Categoria</label>
+                                    <input type="number" class="form-control" name="id" required="true"/>
+                                </div>
+                                 <div class="mb-3">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" class="form-control" name="name" required="true"/>
+                                </div>           
                             <div class="modal-footer">
                                 <button class="btn btn-submit" type="submit">Guardar</button>
                                 <button class="btn btn-close" type="button" data-bs-dismiss="modal">Cerrar</button>

@@ -43,8 +43,8 @@
 
 
 .modal-header {
-    background-color: coral;
-    color: white;
+    background-color: burlywood;
+    color: #a645ee;
     padding: 20px;
     border-radius: 10px 10px 0 0;
     text-align: center;
@@ -105,8 +105,8 @@
 
 .btn-submit, .btn-close {
     padding: 14px 30px;
-    background-color: coral;
-    color: white;
+    background-color: burlywood;
+    color: #a645ee;
     border: none;
     border-radius: 8px;
     font-size: 18px;
@@ -134,8 +134,8 @@
     display: block;
     width: 100%;
     padding: 14px;
-    background-color: coral;
-    color: white;
+    background-color: burlywood;
+    color: #a645ee;
     font-size: 18px;
     border: none;
     cursor: pointer;

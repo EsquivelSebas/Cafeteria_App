@@ -6,7 +6,6 @@ FLUSH PRIVILEGES;
 DROP USER 'usuario_prueba'@'%';
 CREATE USER 'usuario_prueba'@'localhost' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON `cafeteria`.* TO 'usuario_prueba'@'%';
-GRANT ALL PRIVILEGES ON `fide_autos`.* TO 'usuario_prueba'@'%';
 FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'usuario_prueba'@'localhost';
 
