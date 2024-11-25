@@ -1,8 +1,8 @@
 
 .modal {
     display: none; 
-    position: inherit;
-    top: 0;
+    position: fixed;
+    top: 10px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -23,7 +23,7 @@
 
 
 .modal-dialog {
-    background-color: #f8f9fa;
+    background-color: rgb(255,230,243);
     border-radius: 10px;
     max-width: 500px;
     width: 100%;
@@ -44,7 +44,7 @@
 
 .modal-header {
     background-color: burlywood;
-    color: #a645ee;
+    color: white;
     padding: 20px;
     border-radius: 10px 10px 0 0;
     text-align: center;
@@ -59,8 +59,8 @@
     font-size: 25px;
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    top: 95px;
+    right:1280px;
+    top: 1px;
   
 }
 
@@ -106,7 +106,7 @@
 .btn-submit, .btn-close {
     padding: 14px 30px;
     background-color: burlywood;
-    color: #a645ee;
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     font-size: 18px;
@@ -131,19 +131,28 @@
 
 
 .btn-agregar {
-    display: block;
-    width: 100%;
-    padding: 14px;
+    display: flex; 
+    padding: 12px 20px; 
     background-color: burlywood;
-    color: #a645ee;
+    color: antiquewhite; 
     font-size: 18px;
+    font-weight: bold; 
     border: none;
+    border-radius: 25px; 
     cursor: pointer;
-    text-align: center;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease-in-out; 
 }
 
 .btn-agregar:hover {
-    background-color: #0056b3;
+    background-color: darkgoldenrod; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
+.btn-agregar:active {
+    transform: translateY(1px); 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
+}
+

@@ -43,7 +43,7 @@
                         <div class="dropdown-content">
                             <a th:href="@{/account/profile}">Perfil</a>
                             <a th:href="@{/account/orders}">Pedidos</a>
-                            <a href="#" onclick="logout(); return false;">Cerrar sesión</a>
+                            <a th:href="@{/login}">Cerrar sesión</a>
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@
             </div>
         </footer>
 
-      <section th:fragment="botonesAgregarProducto" class="py-4 mb-4 bg-light">
+      <section th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:fragment="botonesAgregarProducto" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">   
@@ -154,7 +154,7 @@
           ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ADD CATEGORIES BUTTONS
   
-         <section th:fragment="botonesAgregarCategoria" class="py-4 mb-4 bg-light">
+         <section th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:fragment="botonesAgregarCategoria" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">   
