@@ -57,8 +57,8 @@ public class ProductController {
     
     
     // save and delete for DTO category entity
-    @GetMapping("/eliminar/category{id}")
-    public String eliminar(Category category)
+    @GetMapping("/elimina/category/{id}")
+    public String elimina(Category category)
     {
         categoryService.delete(category);
                 return "redirect:/products";            
