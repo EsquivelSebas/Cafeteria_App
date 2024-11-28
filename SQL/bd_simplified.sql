@@ -10,10 +10,11 @@ FLUSH PRIVILEGES;
 SHOW GRANTS FOR 'usuario_prueba'@'localhost';
 
 
--- Crear la base de datos llamada "cafeteria"
+-- Create database called cafeteria
 CREATE DATABASE IF NOT EXISTS `cafeteria` 
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_0900_ai_ci;
+
 
 -- Seleccionar la base de datos para usarla
 USE `cafeteria`;

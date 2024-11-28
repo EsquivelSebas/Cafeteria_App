@@ -31,7 +31,7 @@
                                 <input type="hidden" name="productId" th:value="${product.id}">
                                 <button type="submit" class="btn-order">Ordenar</button>
                             </form>
-                            <a th:href="@{/products/eliminar/}+${product.id}" class="btn btn-danger">
+                            <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}"  th:href="@{/products/eliminar/}+${product.id}" class="btn btn-danger">
                                 <i class="fas fa-trash"></i> Eliminar
                             </a>
                         </div>

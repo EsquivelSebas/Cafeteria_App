@@ -27,7 +27,7 @@
                     <h2 class="category-name" th:text="${category.name}">Nombre de la Categoría</h2>
                     
                     <div class="buttons-delete">
-                        <a th:href="@{'/products/elimina/category/' + ${category.id}}" class="btn btn-danger delete-button">
+                        <a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{'/products/elimina/category/' + ${category.id}}" class="btn btn-danger delete-button">
                         <i class="fas fa-trash"></i> Eliminar
                     </a>
                     </div>
