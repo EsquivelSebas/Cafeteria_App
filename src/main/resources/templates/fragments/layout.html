@@ -80,7 +80,8 @@
                 <p>&copy; 2024 Cherries Bakery. Todos los derechos reservados.</p>
             </div>
         </footer>
-
+        
+ /////////////////////////////// /////////////////////////////// /////////////////////////////// /////////////////////////////// ///////////////////////////////
       <section th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:fragment="botonesAgregarProducto" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
@@ -97,6 +98,7 @@
             </div>
         </section>
 
+       
     
         <section th:fragment="agregarProducto">
             <div id="AgregarProducto" 

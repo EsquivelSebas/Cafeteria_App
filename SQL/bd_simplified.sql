@@ -76,7 +76,7 @@ INSERT INTO `order_item` (`id`, `quantity`, `order_id`, `product_id`) VALUES
 
 
 
-ALTER USER 'usuario_prueba'@'localhost' IDENTIFIED BY 'root';
+
 
 -- Simplified MySQL Dump for `orders_table` Table
 
