@@ -14,12 +14,18 @@ public class AuthController {
     private UserService userService;
     
     @GetMapping("/login")
-    public String showLoginForm() {
+    public String showLoginForm(
+        @RequestParam(value = "emailChanged", required = false) String emailChanged, 
+        Model model) {
+
+        if ("true".equals(emailChanged)) {
+            model.addAttribute("message", "Tu correo electrónico fue actualizado. Por favor, inicia sesión nuevamente.");
+        }
         return "auth/login-options";
     }
 
     @GetMapping("/login/form")
-    public String showLoginForm(
+    public String showLoginForm2(
         @RequestParam(value = "error", required = false) String error,
         Model model) {
         if (error != null) {

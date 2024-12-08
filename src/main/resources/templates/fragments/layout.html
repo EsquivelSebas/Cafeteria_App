@@ -41,7 +41,7 @@
                     <div th:if="${#authorization.expression('isAuthenticated()')}" class="user-menu dropdown">
                         <button class="dropbtn" th:text="${#authentication.principal.name}">Usuario</button>
                         <div class="dropdown-content">
-                            <a th:href="@{/account/profile}">Perfil</a>
+                            <a th:href="@{/profile}">Perfil</a>
                             <a th:href="@{/account/orders}">Pedidos</a>
                             <a th:href="@{/login}">Cerrar sesión</a>
                         </div>

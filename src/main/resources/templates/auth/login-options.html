@@ -12,6 +12,9 @@
             <h1 class="text-center">Bienvenido a Cherries Bakery</h1>
             <p class="text-center text-muted mb-6">Elige cómo deseas continuar</p>
             
+            <div th:if="${param.emailChanged}" class="alert alert-info">
+                Su correo ha sido actualizado, Inicie sesion con el nuevo correo.
+            </div>
             <div class="auth-options">
                 <a th:href="@{/login/form}" class="auth-option">
                     <h3>Iniciar sesión</h3>

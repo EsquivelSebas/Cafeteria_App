@@ -15,4 +15,6 @@ public class InfoController {
     public String showContactPage() {
         return "contact";
     }
+    
+    
 }
