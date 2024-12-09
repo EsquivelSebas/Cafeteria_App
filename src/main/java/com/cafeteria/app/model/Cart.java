@@ -10,8 +10,16 @@ public class Cart {
         items.merge(productId, 1, Integer::sum);
     }
 
-    public void removeProduct(Long productId) {
-        items.remove(productId);
+     public void removeProduct(Long productId) {
+        if (items.containsKey(productId)) {
+            int currentQuantity = items.get(productId);
+
+            if (currentQuantity > 1) {
+                items.put(productId, currentQuantity - 1); //reduce quantity by 1
+            } else {
+                items.remove(productId); // increase quantity by 1
+            }
+        }
     }
 
     public Map<Long, Integer> getItems() {

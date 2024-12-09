@@ -5,6 +5,7 @@ import com.cafeteria.app.model.User;
 import com.cafeteria.app.service.EmailService;
 import com.cafeteria.app.service.OrderService;
 import com.cafeteria.app.service.UserService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.*;
@@ -25,6 +26,17 @@ public class OrderController {
 
     @Autowired
     private UserService userService;
+    
+    //get mapping for customer order
+    @GetMapping("/account/orders")
+    public String getCustomerOrders(Model model, Authentication authentication){
+        String email = authentication.getName();
+        List<Order> orders = orderService.getOrderByCustomerEmail(email);
+        model.addAttribute("orders", orders);
+        return "/account/orders";
+    }
+    
+    
 
     @GetMapping("/orderConfirmation")
     public String orderConfirmation(@RequestParam Long orderId, Model model) {

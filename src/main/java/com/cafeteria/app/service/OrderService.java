@@ -19,6 +19,11 @@ public class OrderService {
 
     @Autowired
     private ProductRepository productRepository;
+    
+    //new function to get all the orders based on the customer email
+    public List<Order> getOrderByCustomerEmail(String email){
+        return orderRepository.findByCustomerEmail(email);
+    }
 
     public Order createOrder(User user, Cart cart) {
         Order order = new Order();
@@ -53,4 +58,6 @@ public class OrderService {
     public Optional<Order> findById(Long id) {
         return orderRepository.findById(id);
     }
+
+
 }
